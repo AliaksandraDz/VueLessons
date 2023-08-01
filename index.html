@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Vue</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <h1>Hello Vue</h1>
+    <div id="app"> <!--this div is controlled by app vue-->
+        <div v-if="showBooks"> <!--conditional directive. if condition in "" is true, show the code-->
+            <p>{{ title }} - {{ author }} - {{ age }}</p> <!--{{variable syntax}}-->
+        </div>
+        <button @click="toggleShowBooks">
+            <span v-if="showBooks">Hide Books</span>
+            <span v-else>Show Books</span>
+        </button>
+        <div v-show="showBooks">currently showing books</div>
+        <!--<button v-on:click="age++">Increase age</button> v-on is a directive, tells to react to events. on means onclick. click means to react to click event-->
+        <!--<div @click="changeTitle('Oathbringer')">Change book title</div> @ is a shortcut for v-on:-->
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
