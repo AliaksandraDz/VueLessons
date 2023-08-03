@@ -6,20 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning Vue</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        body{
+            /*padding: 100px 0; /* 100 - top and bottom; 0 - right and left */
+            background: #eee;
+            max-width: 960px;
+            margin:20px auto  /* 20 - top and bottom; auto - right and left */
+        }
+        p, h3, ul{
+            margin:0;
+            padding:0;
+        }
+        li{
+            list-style-type: none;
+            background: #fff;
+            margin: 20px auto;
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items:center;
+            justify-content: space-between;
+        }
+        li.fav{
+            background: pink;
+            color:white;
+        }
+    </style>
 </head>
 <body>
     <h1>Hello Vue</h1>
     <div id="app"> <!--this div is controlled by app vue-->
+        <!--attribute binding-->
+        <!--<a v-bind:href="url">best website</a> v-bind:attribute="dynamic data"-->
+        <!--<a :href="url">best website</a> - we can just write : without v-bind-->
         <div v-if="showBooks"> <!--conditional directive. if condition in "" is true, show the code-->
-            <p>{{ title }} - {{ author }} - {{ age }}</p> <!--{{variable syntax}}-->
+            <!-- <p>{{ books[0].title }} - {{ books[0].author }}</p> {{variable syntax}}-->
+            <ul>
+                <li v-for="book in filteredBooks" @click="toggleFav(book)" :class="{ fav: book.isFav}"> <!--v-for is for iteration; dynamic classes: v-bind:class="{dynamic class: condition}". if condition is true, the element will have this class-->
+                    <img :src="book.img" :alt="book.title">
+                    <h3>{{ book.title }}</h3>
+                    <p>{{ book.author }}</p>
+                </li>
+            </ul>
         </div>
         <button @click="toggleShowBooks">
             <span v-if="showBooks">Hide Books</span>
-            <span v-else>Show Books</span>
+            <span v-else>Show Books</span> <!--takes out the element of the DOM completely-->
         </button>
-        <div v-show="showBooks">currently showing books</div>
-        <!--<button v-on:click="age++">Increase age</button> v-on is a directive, tells to react to events. on means onclick. click means to react to click event-->
-        <!--<div @click="changeTitle('Oathbringer')">Change book title</div> @ is a shortcut for v-on:-->
+        <!-- <br>
+        mouse events
+        <div class="box" @mouseover="handleEvent($event, 5)">mouseover (enter)</div> how to pass args in handleEvent, keeping event the 1st arg
+        <div class="box" @mouseleave="handleEvent">mouseleave</div>
+        <div class="box" @dblclick="handleEvent">double click</div>
+        <div class="box" @mousemove="handleMousemove">position - {{x}} {{y}} </div> -->
+
     </div>
     <script src="app.js"></script>
 </body>
