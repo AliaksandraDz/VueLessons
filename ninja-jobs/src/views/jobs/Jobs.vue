@@ -1,9 +1,14 @@
 <template>
   <h1>Jobs</h1>
-  <div v-for="job in jobs" :key="job.id" class="job">
-    <router-link :to="{ name: 'jobDetails', params: { id: job.id}}"> <!--pass a route parameter id - the id of the current job we are iterating. pass as obj-->
-      <h2>{{ job.title }}</h2>
-    </router-link>
+  <div v-if="jobs.length"> <!--check if jobs have already mounted-->
+    <div v-for="job in jobs" :key="job.id" class="job">
+      <router-link :to="{ name: 'jobDetails', params: { id: job.id}}"> <!--pass a route parameter id - the id of the current job we are iterating. pass as obj-->
+        <h2>{{ job.title }}</h2>
+      </router-link>
+    </div>
+  </div>
+  <div v-else>
+    <p>Loading jobs...</p>
   </div>
 </template>
 
@@ -11,13 +16,15 @@
 export default {
     data() {
         return {
-            jobs: [
-                {title: 'Ninja UX Designer', id: 1, details: 'lorem'},
-                {title: 'Ninja Web Developer', id: 2, details: 'lorem'},
-                {title: 'Ninja Vue Developer', id: 3, details: 'lorem'},
-            ]
+            jobs: []
         }
-    }
+    },
+    mounted() {
+      fetch('http://localhost:3000/jobs')//returnes an obj with json data included
+        .then(res => res.json()) // to get the response body, we need to use an additional method call (parse the response as JSON)
+        .then(data => this.jobs = data)//here we have acccess to the parsed response. we populate jobs[] with the received data
+        .catch(err => console.log(err.message))
+      }
 
 }
 </script>
