@@ -1,0 +1,24 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "title": "Welcome to the blog",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus in hac habitasse platea dictumst quisque sagittis purus. Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque. Senectus et netus et malesuada fames ac. Faucibus ornare suspendisse sed nisi lacus sed viverra. Aliquet lectus proin nibh nisl condimentum id venenatis. Et tortor at risus viverra adipiscing at in tellus. Quis hendrerit dolor magna eget. Tempus urna et pharetra pharetra massa massa. Aliquet porttitor lacus luctus accumsan. Nam aliquam sem et tortor consequat id. Lacus sed turpis tincidunt id aliquet. Pharetra convallis posuere morbi leo urna molestie at elementum. Diam quam nulla porttitor massa id neque aliquam vestibulum.",
+            "tags": [
+                "webdev",
+                "coding",
+                "news"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Top 5 CSS tips",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus in hac habitasse platea dictumst quisque sagittis purus. Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque. Senectus et netus et malesuada fames ac. Faucibus ornare suspendisse sed nisi lacus sed viverra. Aliquet lectus proin nibh nisl condimentum id venenatis. Et tortor at risus viverra adipiscing at in tellus. Quis hendrerit dolor magna eget. Tempus urna et pharetra pharetra massa massa. Aliquet porttitor lacus luctus accumsan. Nam aliquam sem et tortor consequat id. Lacus sed turpis tincidunt id aliquet. Pharetra convallis posuere morbi leo urna molestie at elementum. Diam quam nulla porttitor massa id neque aliquam vestibulum.",
+            "tags": [
+                "css",
+                "webdev",
+                "coding"
+            ]
+        }
+    ]
+}
