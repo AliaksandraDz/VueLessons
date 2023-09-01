@@ -1,0 +1,19 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "play sims",
+      "isFav": true
+    },
+    {
+      "title": "eat some pinapples",
+      "isFav": false,
+      "id": 4
+    },
+    {
+      "title": "pet cats",
+      "isFav": false,
+      "id": 7026
+    }
+  ]
+}
