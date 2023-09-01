@@ -55,6 +55,7 @@
 
       //storeToRefs hook - get all state properties and getters from a store and create refs out of those
       //now we can use 'totalCount' instead of 'taskStore.totalCount'
+      //can't use actions this way
       const { tasks, loading, favs, totalCount, favCount } = storeToRefs(taskStore)
 
       //fetch tasks
